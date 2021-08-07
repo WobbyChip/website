@@ -18,6 +18,7 @@ var navigationItems = [
         name: "UNO Game",
         href: "https://uno-game-website.herokuapp.com",
         icon: "fas fa-dice-six",
+        onclick: function() { alert("Please wait while website is launching."); }
     },
     {
         name: "YouTube Audio Loop",
@@ -66,6 +67,7 @@ function CreateItem(item) {
     a.appendChild(title);
 
     var li = document.createElement("li");
+    if (item.onclick) { li.addEventListener("click", item.onclick) };
     li.appendChild(a);
 
     var navigation = document.querySelector(".navigationContainer .navigation ul");
